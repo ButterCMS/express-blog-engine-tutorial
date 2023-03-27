@@ -1,0 +1,20 @@
+[
+  {
+    "topic": "Getting started with Express",
+    "tags": ["beginners", "node"],
+    "summary": "Learn how to use Express a popular Node framework, to create REST APIs. and serve dynamic content.",
+    "featuerd-image": "https://images.unsplash.com/photo-1675522087646-ceb5c54cfc0e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=645&q=80"
+  },
+  {
+    "topic": "Most know tools for Express devs",
+    "tags": ["middleware", "tools"],
+    "summary": "Learn about useful tools for Express that will increase your productivity.",
+    "featuerd-image": "https://plus.unsplash.com/premium_photo-1674595901815-55c7b19c9fa1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+  },
+  {
+    "topic": "Building a blog with Express and ButterCMS",
+    "tags": ["buttercms", "blog engine", "blog"],
+    "summary": "Learn how to build a blog with Express and ButterCMS.",
+    "featuerd-image": "https://images.unsplash.com/photo-1675207894388-8246ecd3f3ec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+  }
+  ]

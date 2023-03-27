@@ -1,0 +1,10 @@
+<div class="blogDetail">
+  <img src=<%= post.featured_image %> alt="cover"/>
+  <h1><%= post.title %></h1>
+  <div>
+    <span><strong>By</strong> <%= post.author.first_name + " " + post.author.last_name %></span>
+  </div>
+  <div class="blogDetail__body">
+    <%- post.body %>
+  </div>
+</div>

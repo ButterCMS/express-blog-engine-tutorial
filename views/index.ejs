@@ -1,0 +1,101 @@
+<div class="home">
+  <!-- Hero section -->
+  <div class="home__hero">
+    <div>
+      <h1>Express blog</h1>
+      <p>Learn all about Express and its eco-system from a plethora of content</p>
+    </div>
+    <div class="home__search">
+      <form class="home__searchForm" action="/search" method="GET">
+        <input 
+          placeholder="Find a blog post" 
+          name="search" 
+          value=<%= searchValue %> 
+        >
+        <button>Search</button>
+      </form>
+      <% if (searchValue) { %>
+        <div class="home__searchResult">
+          <span onclick="closeModal()">X</span>
+          <% filteredPosts.forEach((post) => { %>
+            <div class="home__searchResult__post">
+              <div class="home__searchResult__postImg">
+                <img src=<%= post.featured_image %> alt="blog post"/>
+              </div>
+              <div class="home__searchResult__postInfo">
+                <h2><a href="/blog/<%= post.slug %>" ><%= post.title %></a></h2>
+                <p>
+                  <%= post.summary %>
+                </p>
+              </div>
+            </div>  
+          <% })%>
+        </div>
+      <% } %>
+    </div>
+  </div>  
+
+  <!-- Latest post -->
+  <div class="home__latestPost">
+    <img src=<%= posts[0].featured_image %> alt="blog post"/>
+    <div class="home__latestPost__details">
+      <span>Latest post</span>
+      <div>
+        <div class="home__latestPostInfo">
+          <h2><a href="/blog/<%= posts[0].slug %>" ><%= posts[0].title %></a></h2>
+          <p>
+            <%= posts[0].summary %>
+          </p>
+        </div>
+        <div class="home__latestPost__detailsImg">
+          <img src=<%= posts[0].author.profile_image %> alt="profile"/>
+          <span>
+            <span><%= posts[0].author.first_name + ' ' + posts[0].author.last_name %></span>
+            <span><%= new Date(posts[0].created).toISOString().split('T')[0] %></span>
+          </span>
+        </div>
+        
+        <div class="home__postTags">
+          <% posts[0].tags.forEach((tag) => { %>
+            <span><%= tag.name %></span>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <div class="home__posts">
+    <% posts.slice(1).forEach((post) => { %>
+      <div class="home__post">
+        <div class="home__postImg">
+          <img src=<%= post.featured_image %> alt="blog post"/>
+          <div>
+            <img src=<%= post.author.profile_image %> alt="profile"/>
+            <span>
+              <span><%= post.author.first_name + ' ' + post.author.last_name %></span>
+              <span><%= new Date(post.created).toISOString().split('T')[0] %></span>
+            </span>
+          </div>
+        </div>
+        <div class="home__postInfo">
+          <div class="home__postTags">
+            <% posts[0].tags.forEach((tag) => { %>
+              <span><%= tag.name %></span>
+            <% }) %>
+          </div>
+          <h2><a href="/blog/<%= post.slug %>" ><%= post.title %></a></h2>
+          <p>
+            <%= post.summary %>
+          </p>
+        </div>
+      </div>  
+    <% })%>
+  </div>
+</div>
+
+<script>
+  const closeModal = () => {
+    const modal = document.querySelector('.home__searchResult')
+    modal.style.display = 'none'
+  }
+</script>
